@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>实验2 - 浮动布局与图文混排</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	div{
+		box-sizing:border-box;
+	}
+	#container{
+		width: 900px;
+		margin: 0 auto;
+		font-family: "微软雅黑", Arial;
+	}
+	#header{
+		width: 100%;
+		height: 150px;
+		background: url('图片素材/bookbanner.jpg') no-repeat center center;
+		background-size: contain;
+	}
+	#content{ 
+		width: 100%; 
+		background-color: #f5f5f5; 
+	}
+	.sidebar{
+		width: 200px;
+		background-color: #333;
+		float: left;
+		padding: 20px 10px;
+	}
+	.sidebar h3{
+		color: #fff;
+		margin-bottom: 15px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid #ff6600;
+	}
+	.sidebar ul{
+		list-style: none;
+	}
+	.sidebar ul li{
+		margin-bottom: 10px;
+	}
+	.sidebar ul li a{
+		color: #ccc;
+		text-decoration: none;
+		display: block;
+		padding: 8px 10px;
+		border-radius: 4px;
+		transition: all 0.3s;
+	}
+	.sidebar ul li a:hover{
+		background-color: #ff6600;
+		color: #fff;
+	}
+	.main{
+		width: 700px;
+		float: right;
+		padding: 20px;
+		background-color: #fff;
+	}
+	.main h1{
+		color: #333;
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid #eee;
+	}
+	.book-section{
+		margin-bottom: 30px;
+		padding-bottom: 20px;
+		border-bottom: 1px dashed #ddd;
+	}
+	.book-section:last-child{
+		border-bottom: none;
+	}
+	.book-section img{
+		width: 150px;
+		padding: 5px;
+		margin: 5px 15px 5px 0; 
+		border: 1px solid #ddd;
+	}
+	.left{
+		float: left;
+		border-right: 3px solid #ff6600;
+		border-bottom: 3px solid #ff6600;
+	}
+	.right{
+		float:right;
+		border-left: 3px solid #ff6600;
+		border-top: 3px solid #ff6600;
+		margin: 5px 0 5px 15px !important;
+	}
+	.book-section p{
+		text-align: justify;
+		line-height: 1.8;
+		color: #555;
+		font-size: 14px;
+	}
+	.book-section p:first-letter{
+		color: #ff6600;
+		font-weight: bold;
+		font-size: 28px;
+	}
+	.book-section h2{
+		color: #333;
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	.clearfix{
+		clear: both;
+	}
+	#footer{
+		width: 100%;
+		height: 80px;
+		background-color: #333;
+		clear: both;
+		text-align: center;
+		color: #fff;
+		line-height: 80px;
+	}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id="header"></div>
+	<div id="content"> 
+		<div class="sidebar">
+			<h3>图书分类</h3>
+			<ul>
+				<li><a href="#">文学小说</a></li>
+				<li><a href="#">科技读物</a></li>
+				<li><a href="#">艺术设计</a></li>
+				<li><a href="#">历史传记</a></li>
+				<li><a href="#">经济管理</a></li>
+				<li><a href="#">生活休闲</a></li>
+			</ul>
+		</div>
+		<div class="main">
+			<h1>精选推荐</h1>
+			
+			<div class="book-section">
+				<img class="left" src="图片素材/book1.jpg" alt="三十六计">
+				<h2>三十六计</h2>
+				<p>《三十六计》是我国古代卓越的军事思想精华，内容丰富，事例生动。全书按计名排列，共分六套，即胜战计、敌战计、攻战计、混战计、并战计、败战计，每套各包含六计，共计三十六计。本书配有详细的注释和精彩的故事，帮助青少年更好地理解和运用这些古老的智慧。</p>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="book-section">
+				<img class="right" src="图片素材/book2.jpg" alt="小学生必备古诗80首">
+				<h2>小学生必备古诗80首</h2>
+				<p>本书精选了80首适合小学生背诵的优秀古诗，涵盖了部编版语文教材中的必背篇目。每首诗都配有拼音、注释、诗意解读和精彩赏析，帮助同学们轻松理解诗意，感受古典诗歌的魅力。书中还附有诗人简介，让读者在背诵的同时了解诗歌背后的故事。</p>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="book-section">
+				<img class="left" src="图片素材/book3.jpg" alt="七色花">
+				<h2>七色花</h2>
+				<p>《七色花》是俄罗斯著名童话作家卡达耶夫的代表作，讲述了一个关于善良和友爱的故事。小姑娘珍妮用神奇的七色花实现了七个愿望，但只有帮助他人带来的快乐才是最真实的。本书文字优美，寓意深刻，是培养孩子美好品德的经典读物，适合亲子共读。</p>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="book-section">
+				<img class="right" src="图片素材/book4.jpg" alt="姜小牙上学记">
+				<h2>姜小牙上学记</h2>
+				<p>《姜小牙上学记》是一本充满童趣的校园小说，讲述了主人公姜小牙从幼儿园到小学的成长故事。书中用幽默风趣的语言描绘了校园生活的点点滴滴，展现了友谊、亲情和师生情谊。故事贴近学生生活，让小读者在阅读中找到共鸣，是不可多得的儿童文学佳作。</p>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">版权所有 &copy; 2024 图书推荐网站 | <a href="copyright.html" style="color: #ff6600; text-decoration: none;">版权声明</a></div>
+</div>
+</body>
+</html>
